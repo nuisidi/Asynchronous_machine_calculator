@@ -97,7 +97,7 @@ class ElectricSystem:
         return results_list
 
 
-electric_system = ElectricSystem(15, 220, 192, 36, 0.932, 0.955, 0.46, 0.02, 2.24, 0.08, 3, 3, 3, 50, 1000, 0.04)
-results = electric_system.calculate()
-for key, value in results.items():
-    print(f"{key}: {value}")
+# electric_system = ElectricSystem(15, 220, 192, 36, 0.932, 0.955, 0.46, 0.02, 2.24, 0.08, 3, 3, 3, 50, 1000, 0.04)
+# results = electric_system.calculate()
+# for key, value in results.items():
+#     print(f"{key}: {value}")

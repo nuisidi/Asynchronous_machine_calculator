@@ -2,22 +2,23 @@ import flet as ft
 from basics import ElectricSystem
 
 
-def return_to_main_menu(page):
-    page.clean()
-    main(page)
-
-
 def main(page):
+
+    def return_to_main_menu(e):
+        page.clean()
+        main(page)
+
     def dialog_dismissed(e):
         page.clean()
-        page.add(ft.Text('Error'))
+        main(page)
 
     cupertino_alert_dialog = ft.CupertinoAlertDialog(
         title=ft.Text("Ошибка!"),
         content=ft.Text(""),
         on_dismiss=dialog_dismissed,
         actions=[ft.CupertinoDialogAction("Вернуться",
-                 on_click=dialog_dismissed)]
+                 is_default_action=True,
+                 on_click=return_to_main_menu)]
     )
 
     def open_cupertino_dialog(e):
@@ -51,9 +52,9 @@ def main(page):
                                              m1, m2, poles, f1, ns, sn)
             result = electric_system.calculate()
             for key, value in result.items():
-                page.add(ft.Text(f"{key}: {value}"))
+                page.add(ft.Text(f"{key}: {value}", theme_style=ft.Theme.text_theme))
 
-            # page.add(ft.ElevatedButton('Начать расчет заново'))
+            page.add(ft.ElevatedButton('Начать расчет заново', on_click=return_to_main_menu))
         except Exception as ex:
             open_cupertino_dialog(e)
 
