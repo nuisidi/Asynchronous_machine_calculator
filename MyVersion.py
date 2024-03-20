@@ -65,8 +65,8 @@ def main(page):
     w2_val = ft.TextField(label="Количество обмоток ротора")
     k01_val = ft.TextField(label="Обмоточный коэффициент статора")
     k02_val = ft.TextField(label="Обмоточный коэффициент ротора")
-    r1_om = ft.TextField(label="Активное сопротивление обмоток ротора, Ом")
-    r2_om = ft.TextField(label="Активное сопротивление обмоток статора, Ом")
+    r1_om = ft.TextField(label="Активное сопротивление обмоток статора,Ом")
+    r2_om = ft.TextField(label="Активное сопротивление обмоток ротора, Ом")
     x1_om = ft.TextField(label="Индуктивное сопротивление обмоток статора, Ом")
     x2_om = ft.TextField(label="Индуктивное сопротивление обмоток ротора, Ом")
     m1_val = ft.TextField(label="Число фаз обмоток статора")
@@ -85,6 +85,8 @@ def main(page):
 
     page.scroll = "always"
     page.update()
+
+
 
     page.add(
         p_kw,
